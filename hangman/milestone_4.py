@@ -26,12 +26,9 @@ class Hangman:
         
         if self.guess in self.word:
             print(f"Good guess! {guess} is in the word.")
-        else:
-            print(f"Sorry, {guess} is not in the word. Try again.")
-        for index, letter in enumerate(self.word):
-            if letter == self.guess:
-                self.word_guessed[index] = self.guess
-                self.word_guessed = "".join(self.word_guessed)
+            for i in range(len(self.word)):
+                if self.word[i] == self.guess:
+                    self.word_guessed[i] = self.guess
             else:
                 self.num_lives = self.num_lives - 1
                 print(f"Sorry, {self.guess} not in the word.")
